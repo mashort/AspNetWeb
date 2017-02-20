@@ -4,7 +4,13 @@ Partial Class _Default
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load() Handles Me.Load
-        IsFeatureFlagEnabled("ShowName")
+        Dim showName As New FeatureControl.ReleaseFeatureToggles.ShowNameOnHomePage
+
+        If showName.FeatureEnabled Then
+            pnlName.Visible = True
+        Else
+            pnlName.Visible = False
+        End If
     End Sub
 
     Private Function IsFeatureFlagEnabled(ByVal featureFlagName As String) As Boolean

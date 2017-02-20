@@ -12,6 +12,9 @@
     <div>
         <asp:Label ID="lblIntro" runat="server" Text="Introductory stuff"></asp:Label>
 
+        <asp:Panel ID="pnlName" runat="server" Visible="false">
+            <asp:Label ID="lblFirstName" runat="server" Text="First Name"></asp:Label>
+        </asp:Panel>
     </div>
     </form>
 </body>
